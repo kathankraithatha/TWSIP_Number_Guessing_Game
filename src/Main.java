@@ -9,6 +9,7 @@ class Guessing_Game{
         Scanner sc=new Scanner(System.in);
         int max=50;
         int min=1;
+        int temp=0;
 
         double b = (int) (Math.random() * (max - min + 1)) +min;
         for (int i=0;i<5;i++){
@@ -21,13 +22,19 @@ class Guessing_Game{
                 System.out.println("You guessed the lower number!");
             }
             else if (a==b){
-                System.out.println("Woahoo you guessed it correct. Congratulations!!");
+                temp=a;
+               
+                break;
             }
 
         }
-
-        System.out.println("Oops You run out of attempts. Better luck next time. The correct number was: "+ b);
-
+            if(temp==b){
+                System.out.println("Woahoo you guessed it correct. Congratulations!!"); 
+            }
+            else{
+                System.out.println("The Generated number was: "+ b);
+            }
+        
     }
 }
 
